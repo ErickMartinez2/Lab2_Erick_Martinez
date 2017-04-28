@@ -48,20 +48,123 @@ public class Lab2_Erick_Martinez {
                     break;
                 case 4:
                     int ganador = 0;
+                    ArrayList muerto = new ArrayList();
                     do {
                         int turno = 1;
                         switch (turno) {
                             case 1:
+                                int num = 0;
                                 for (int i = 0; i < Rusia.size(); i++) {
-                                    Rusos rusia = ((Rusos)Rusia.get(i));
+                                    Rusos rusia = ((Rusos) Rusia.get(i));
                                     int fuego = rusia.getFuego();
-                                    Alemanes alemania = ((Alemanes)Alemania.get(i));
-                                    int resistencia = alemania.getResistencia();
-                                    int salud = resistencia - fuego;
-                                    alemania.setResistencia(salud);
+                                    if (i < Alemania.size()) {
+                                        Alemanes alemania = ((Alemanes) Alemania.get(i));
+                                        int resistencia = alemania.getResistencia();
+                                        int salud = resistencia - fuego;
+                                        alemania.setResistencia(salud);
+                                        num = i;
+                                    } else {
+                                        Alemanes alemania = ((Alemanes) Alemania.get(num));
+                                        int resistencia = alemania.getResistencia();
+                                        int salud = resistencia - fuego;
+                                        alemania.setResistencia(salud);
+                                    }
                                 }
+                                int num2 = 0;
+                                for (int i = 0; i < Rusia.size(); i++) {
+                                    Rusos rusia = ((Rusos) Rusia.get(i));
+                                    int fuego = rusia.getFuego();
+                                    if (i < Programacion.size()) {
+                                        Alumnos programacion = ((Alumnos) Programacion.get(i));
+                                        int resistencia = programacion.getResistencia();
+                                        int salud = resistencia - fuego;
+                                        programacion.setResistencia(salud);
+                                        num = i;
+                                    } else {
+                                        Alumnos programacion = ((Alumnos) Programacion.get(num2));
+                                        int resistencia = programacion.getResistencia();
+                                        int salud = resistencia - fuego;
+                                        programacion.setResistencia(salud);
+                                    }
+                                }
+                                turno++;
+                                break;
+                            case 2:
+                                int num3 = 0;
+                                for (int i = 0; i < Alemania.size(); i++) {
+                                    Alemanes alemania = ((Alemanes) Alemania.get(i));
+                                    int fuego = alemania.getFuego();
+                                    if (i < Rusia.size()) {
+                                        Rusos rusia = ((Rusos) Rusia.get(i));
+                                        int resistencia = rusia.getResistencia();
+                                        int salud = resistencia - fuego;
+                                        rusia.setResistencia(salud);
+                                        num = i;
+                                    } else {
+                                        Rusos rusia = ((Rusos) Rusia.get(num3));
+                                        int resistencia = rusia.getResistencia();
+                                        int salud = resistencia - fuego;
+                                        rusia.setResistencia(salud);
+                                    }
+                                }
+                                int num4 = 0;
+                                for (int i = 0; i < Alemania.size(); i++) {
+                                    Alemanes alemania = ((Alemanes) Alemania.get(i));
+                                    int fuego = alemania.getFuego();
+                                    if (i < Programacion.size()) {
+                                        Alumnos programacion = ((Alumnos) Programacion.get(i));
+                                        int resistencia = programacion.getResistencia();
+                                        int salud = resistencia - fuego;
+                                        programacion.setResistencia(salud);
+                                        num = i;
+                                    } else {
+                                        Alumnos programacion = ((Alumnos) Programacion.get(num4));
+                                        int resistencia = programacion.getResistencia();
+                                        int salud = resistencia - fuego;
+                                        programacion.setResistencia(salud);
+                                    }
+                                }
+                                turno++;
+                                break;
+                            case 3:
+                                int num5 = 0;
+                                for (int i = 0; i < Programacion.size(); i++) {
+                                    Alumnos programacion = ((Alumnos) Programacion.get(i));
+                                    int fuego = programacion.getFuego();
+                                    if (i < Rusia.size()) {
+                                        Rusos rusia = ((Rusos) Rusia.get(i));
+                                        int resistencia = rusia.getResistencia();
+                                        int salud = resistencia - fuego;
+                                        rusia.setResistencia(salud);
+                                        num = i;
+                                    } else {
+                                        Rusos rusia = ((Rusos) Rusia.get(num5));
+                                        int resistencia = rusia.getResistencia();
+                                        int salud = resistencia - fuego;
+                                        rusia.setResistencia(salud);
+                                    }
+                                }
+                                int num6 = 0;
+                                for (int i = 0; i < Programacion.size(); i++) {
+                                    Alumnos programacion = ((Alumnos) Programacion.get(i));
+                                    int fuego = programacion.getFuego();
+                                    if (i < Alemania.size()) {
+                                        Alemanes alemania = ((Alemanes) Alemania.get(i));
+                                        int resistencia = alemania.getResistencia();
+                                        int salud = resistencia - fuego;
+                                        alemania.setResistencia(salud);
+                                        num = i;
+                                    } else {
+                                        Alemanes alemania = ((Alemanes) Alemania.get(num6));
+                                        int resistencia = alemania.getResistencia();
+                                        int salud = resistencia - fuego;
+                                        alemania.setResistencia(salud);
+                                    }
+                                }
+                                turno = 1;
                                 break;
                         }
+                        
                     } while (ganador == 0);
                     break;
                 case 5:
@@ -82,19 +185,19 @@ public class Lab2_Erick_Martinez {
                         case 1:
                             System.out.println("Soldados de Rusia:");
                             for (int i = 0; i < Rusia.size(); i++) {
-                                System.out.println(Rusia.indexOf(i) + ". " + Rusia.get(i));
+                                System.out.println(i + ". " + Rusia.get(i));
                             }
                             break;
                         case 2:
                             System.out.println("Soldados de Alemania:");
                             for (int i = 0; i < Alemania.size(); i++) {
-                                System.out.println(Alemania.indexOf(i) + ". " + Alemania.get(i));
+                                System.out.println(i + ". " + Alemania.get(i));
                             }
                             break;
                         case 3:
                             System.out.println("Soldados de Programacion:");
                             for (int i = 0; i < Programacion.size(); i++) {
-                                System.out.println(Programacion.indexOf(i) + ". " + Programacion.get(i));
+                                System.out.println(i + ". " + Programacion.get(i));
                             }
                             break;
                     }
