@@ -61,13 +61,23 @@ public class Lab2_Erick_Martinez {
                                         Alemanes alemania = ((Alemanes) Alemania.get(i));
                                         int resistencia = alemania.getResistencia();
                                         int salud = resistencia - fuego;
-                                        alemania.setResistencia(salud);
+                                        if (salud <= 0) {
+                                            muerto.add(alemania.getAlias());
+                                            Alemania.remove(i);
+                                        } else {
+                                            alemania.setResistencia(salud);
+                                        }
                                         num = i;
                                     } else {
                                         Alemanes alemania = ((Alemanes) Alemania.get(num));
                                         int resistencia = alemania.getResistencia();
                                         int salud = resistencia - fuego;
-                                        alemania.setResistencia(salud);
+                                        if (salud <= 0) {
+                                            muerto.add(alemania.getAlias());
+                                            Alemania.remove(num);
+                                        } else {
+                                            alemania.setResistencia(salud);
+                                        }
                                     }
                                 }
                                 int num2 = 0;
@@ -78,13 +88,23 @@ public class Lab2_Erick_Martinez {
                                         Alumnos programacion = ((Alumnos) Programacion.get(i));
                                         int resistencia = programacion.getResistencia();
                                         int salud = resistencia - fuego;
-                                        programacion.setResistencia(salud);
-                                        num = i;
+                                        if (salud <= 0) {
+                                            muerto.add(programacion.getApodo());
+                                            Programacion.remove(i);
+                                        } else {
+                                            programacion.setResistencia(salud);
+                                        }
+                                        num2 = i;
                                     } else {
                                         Alumnos programacion = ((Alumnos) Programacion.get(num2));
                                         int resistencia = programacion.getResistencia();
                                         int salud = resistencia - fuego;
-                                        programacion.setResistencia(salud);
+                                        if (salud <= 0) {
+                                            muerto.add(programacion.getApodo());
+                                            Programacion.remove(num2);
+                                        } else {
+                                            programacion.setResistencia(salud);
+                                        }
                                     }
                                 }
                                 turno++;
@@ -98,13 +118,23 @@ public class Lab2_Erick_Martinez {
                                         Rusos rusia = ((Rusos) Rusia.get(i));
                                         int resistencia = rusia.getResistencia();
                                         int salud = resistencia - fuego;
-                                        rusia.setResistencia(salud);
-                                        num = i;
+                                        if (salud <= 0) {
+                                            muerto.add(rusia.getNombre());
+                                            Rusia.remove(i);
+                                        } else {
+                                            rusia.setResistencia(salud);
+                                        }
+                                        num3 = i;
                                     } else {
                                         Rusos rusia = ((Rusos) Rusia.get(num3));
                                         int resistencia = rusia.getResistencia();
                                         int salud = resistencia - fuego;
-                                        rusia.setResistencia(salud);
+                                        if (salud <= 0) {
+                                            muerto.add(alemania.getAlias());
+                                            Alemania.remove(num3);
+                                        } else {
+                                            rusia.setResistencia(salud);
+                                        }
                                     }
                                 }
                                 int num4 = 0;
@@ -115,13 +145,23 @@ public class Lab2_Erick_Martinez {
                                         Alumnos programacion = ((Alumnos) Programacion.get(i));
                                         int resistencia = programacion.getResistencia();
                                         int salud = resistencia - fuego;
-                                        programacion.setResistencia(salud);
-                                        num = i;
+                                        if (salud <= 0) {
+                                            muerto.add(programacion.getApodo());
+                                            Programacion.remove(i);
+                                        } else {
+                                            programacion.setResistencia(salud);
+                                        }
+                                        num4 = i;
                                     } else {
                                         Alumnos programacion = ((Alumnos) Programacion.get(num4));
                                         int resistencia = programacion.getResistencia();
                                         int salud = resistencia - fuego;
-                                        programacion.setResistencia(salud);
+                                        if (salud <= 0) {
+                                            muerto.add(programacion.getApodo());
+                                            Programacion.remove(num4);
+                                        } else {
+                                            programacion.setResistencia(salud);
+                                        }
                                     }
                                 }
                                 turno++;
@@ -135,13 +175,23 @@ public class Lab2_Erick_Martinez {
                                         Rusos rusia = ((Rusos) Rusia.get(i));
                                         int resistencia = rusia.getResistencia();
                                         int salud = resistencia - fuego;
-                                        rusia.setResistencia(salud);
-                                        num = i;
+                                        if (salud <= 0) {
+                                            muerto.add(rusia.getNombre());
+                                            Rusia.remove(i);
+                                        } else {
+                                            rusia.setResistencia(salud);
+                                        }
+                                        num5 = i;
                                     } else {
                                         Rusos rusia = ((Rusos) Rusia.get(num5));
                                         int resistencia = rusia.getResistencia();
                                         int salud = resistencia - fuego;
-                                        rusia.setResistencia(salud);
+                                        if (salud <= 0) {
+                                            muerto.add(rusia.getNombre());
+                                            Programacion.remove(num5);
+                                        } else {
+                                            rusia.setResistencia(salud);
+                                        }
                                     }
                                 }
                                 int num6 = 0;
@@ -152,19 +202,31 @@ public class Lab2_Erick_Martinez {
                                         Alemanes alemania = ((Alemanes) Alemania.get(i));
                                         int resistencia = alemania.getResistencia();
                                         int salud = resistencia - fuego;
-                                        alemania.setResistencia(salud);
-                                        num = i;
+                                        if (salud <= 0) {
+                                            muerto.add(alemania.getAlias());
+                                            Alemania.remove(num6);
+                                        } else {
+                                            alemania.setResistencia(salud);
+                                        }
+                                        num6 = i;
                                     } else {
                                         Alemanes alemania = ((Alemanes) Alemania.get(num6));
                                         int resistencia = alemania.getResistencia();
                                         int salud = resistencia - fuego;
-                                        alemania.setResistencia(salud);
+                                        if (salud <= 0) {
+                                            muerto.add(alemania.getAlias());
+                                            Alemania.remove(num6);
+                                        }else{
+                                            alemania.setResistencia(salud);
+                                        }
                                     }
                                 }
                                 turno = 1;
                                 break;
                         }
-                        
+                        for (int i = 0; i < muerto.size(); i++) {
+                            System.out.println();
+                        }
                     } while (ganador == 0);
                     break;
                 case 5:
