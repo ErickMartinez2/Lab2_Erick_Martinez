@@ -230,17 +230,21 @@ public class Lab2_Erick_Martinez {
                                 turno = 1;
                                 break;
                         }
-                        if ((Rusia.isEmpty() && Alemania.isEmpty()) || turno == 1) {
-                            System.out.println("Ganador Alumnos!");
-                            ganador = 1;
+                        if (Rusia.isEmpty() && Alemania.isEmpty() && Programacion.isEmpty()) {
+                            System.out.println("Empate!");
                         } else {
-                            if ((Rusia.isEmpty() && Programacion.isEmpty()) || turno == 2) {
-                                System.out.println("Ganador Alemania!");
+                            if ((Rusia.isEmpty() && Alemania.isEmpty()) || turno == 1) {
+                                System.out.println("Ganador Alumnos!");
                                 ganador = 1;
                             } else {
-                                if ((Programacion.isEmpty() && Alemania.isEmpty()) || turno == 3) {
-                                    System.out.println("Ganador Rusia!");
+                                if ((Rusia.isEmpty() && Programacion.isEmpty()) || turno == 2) {
+                                    System.out.println("Ganador Alemania!");
                                     ganador = 1;
+                                } else {
+                                    if ((Programacion.isEmpty() && Alemania.isEmpty()) || turno == 3) {
+                                        System.out.println("Ganador Rusia!");
+                                        ganador = 1;
+                                    }
                                 }
                             }
                         }
