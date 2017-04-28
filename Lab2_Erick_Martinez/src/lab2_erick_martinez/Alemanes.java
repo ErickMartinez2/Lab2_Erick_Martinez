@@ -10,18 +10,29 @@ package lab2_erick_martinez;
  * @author usuario
  */
 public class Alemanes {
+
     public String alias;
     public int edad;
     public String casta;
     public int resistencia;
     public String arma;
+    public int fuego;
 
-    public Alemanes(String alias, int edad, String casta, int resistencia, String arma) {
+    public int getFuego() {
+        return fuego;
+    }
+
+    public void setFuego(int fuego) {
+        this.fuego = fuego;
+    }
+
+    public Alemanes(String alias, int edad, String casta, int resistencia, String arma, int fuego) {
         this.alias = alias;
         this.edad = edad;
         this.casta = casta;
         this.resistencia = resistencia;
         this.arma = arma;
+        this.fuego = fuego;
     }
 
     public String getAlias() {
@@ -63,5 +74,10 @@ public class Alemanes {
     public void setArma(String arma) {
         this.arma = arma;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Alemanes{" + "alias=" + alias + ", edad=" + edad + ", casta=" + casta + ", resistencia=" + resistencia + ", arma=" + arma + ", fuego=" + fuego + '}';
+    }
+
 }

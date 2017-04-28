@@ -17,14 +17,24 @@ public class Alumnos {
     public int resistencia;
     public String grado;
     public String arma;
+    public int fuego;
 
-    public Alumnos(String apodo, int cuenta, int edad, int resistencia, String grado, String arma) {
+    public int getFuego() {
+        return fuego;
+    }
+
+    public void setFuego(int fuego) {
+        this.fuego = fuego;
+    }
+
+    public Alumnos(String apodo, int cuenta, int edad, int resistencia, String grado, String arma, int fuego) {
         this.apodo = apodo;
         this.cuenta = cuenta;
         this.edad = edad;
         this.resistencia = resistencia;
         this.grado = grado;
         this.arma = arma;
+        this.fuego = fuego;
     }
 
     public String getApodo() {
@@ -74,6 +84,10 @@ public class Alumnos {
     public void setArma(String arma) {
         this.arma = arma;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Alumnos{" + "apodo=" + apodo + ", cuenta=" + cuenta + ", edad=" + edad + ", resistencia=" + resistencia + ", grado=" + grado + ", arma=" + arma + ", fuego=" + fuego + '}';
+    }
+
 }

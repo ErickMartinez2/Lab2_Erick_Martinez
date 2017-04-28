@@ -16,14 +16,16 @@ public class Rusos {
     public String rango;
     public int resistencia;
     public String arma;
+    public int fuego;
 
-    public Rusos(String nombre, int ID, int edad, String rango, int resistencia, String arma) {
+    public Rusos(String nombre, int ID, int edad, String rango, int resistencia, String arma, int fuego) {
         this.nombre = nombre;
         this.ID = ID;
         this.edad = edad;
         this.rango = rango;
         this.resistencia = resistencia;
         this.arma = arma;
+        this.fuego = fuego;
     }
 
     public String getNombre() {
@@ -49,6 +51,10 @@ public class Rusos {
     public String getArma() {
         return arma;
     }
+    
+    public int getFuego() {
+        return fuego;
+    }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -72,6 +78,15 @@ public class Rusos {
 
     public void setArma(String arma) {
         this.arma = arma;
+    }
+    
+    public void setFuego(int fuego){
+        this.fuego = fuego;
+    }
+
+    @Override
+    public String toString() {
+        return "Rusos{" + "nombre=" + nombre + ", ID=" + ID + ", edad=" + edad + ", rango=" + rango + ", resistencia=" + resistencia + ", arma=" + arma + ", fuego=" + fuego + '}';
     }
     
 }
