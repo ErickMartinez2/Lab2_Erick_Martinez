@@ -52,7 +52,14 @@ public class Lab2_Erick_Martinez {
                         int turno = 1;
                         switch (turno) {
                             case 1:
-
+                                for (int i = 0; i < Rusia.size(); i++) {
+                                    Rusos rusia = ((Rusos)Rusia.get(i));
+                                    int fuego = rusia.getFuego();
+                                    Alemanes alemania = ((Alemanes)Alemania.get(i));
+                                    int resistencia = alemania.getResistencia();
+                                    int salud = resistencia - fuego;
+                                    alemania.setResistencia(salud);
+                                }
                                 break;
                         }
                     } while (ganador == 0);
@@ -71,11 +78,58 @@ public class Lab2_Erick_Martinez {
                     System.out.println("3. Alumno");
                     System.out.print("Ingrese su opcion: ");
                     int num2 = sc.nextInt();
-                    switch(num){
-                        
+                    switch (num2) {
+                        case 1:
+                            System.out.println("Soldados de Rusia:");
+                            for (int i = 0; i < Rusia.size(); i++) {
+                                System.out.println(Rusia.indexOf(i) + ". " + Rusia.get(i));
+                            }
+                            break;
+                        case 2:
+                            System.out.println("Soldados de Alemania:");
+                            for (int i = 0; i < Alemania.size(); i++) {
+                                System.out.println(Alemania.indexOf(i) + ". " + Alemania.get(i));
+                            }
+                            break;
+                        case 3:
+                            System.out.println("Soldados de Programacion:");
+                            for (int i = 0; i < Programacion.size(); i++) {
+                                System.out.println(Programacion.indexOf(i) + ". " + Programacion.get(i));
+                            }
+                            break;
                     }
-                    break;
+                    System.out.print("Ingrese el numero del soldado: ");
+                    int num3 = sc.nextInt();
+                    switch (num) {
+                        case 1:
+                            switch (num2) {
+                                case 1:
+                                    Rusia.remove(num3);
+                                    break;
+                                case 2:
+                                    Alemania.remove(num3);
+                                    break;
+                                case 3:
+                                    Programacion.remove(num3);
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            switch (num2) {
+                                case 1:
+                                    Rusia_Metodo2(num3);
+                                    break;
+                                case 2:
+                                    Alemania_Metodo2(num3);
+                                    break;
+                                case 3:
+                                    Programacion_Metodo2(num3);
+                                    break;
+                            }
+                            break;
+                    }
             }
+
         } while (opcion != 6);
     }
 
@@ -229,5 +283,142 @@ public class Lab2_Erick_Martinez {
             System.out.println("Desea ingresar otro soldado alumno? [s/n]");
             resp3 = sc.next().charAt(0);
         } while (resp3 == 's' || resp3 == 'S');
+    }
+
+    public static void Rusia_Metodo2(int soldado) {
+        System.out.println();
+        System.out.println("-> Modificacion de Soldado Ruso");
+        System.out.print("Ingrese el nombre del soldado: ");
+        String nombre = sc.next();
+        System.out.print("Ingrese el ID del soldado: ");
+        int id = sc.nextInt();
+        System.out.print("Ingrese la edad del soldado: ");
+        int edad = sc.nextInt();
+        System.out.print("Ingrese el rango del soldado: ");
+        String rango = sc.next();
+        int arma;
+        do {
+            System.out.println("Escoga una arma para el soldado:");
+            System.out.println("1. AK-47");
+            System.out.println("2. Revolver Navant");
+            System.out.println("3. RPG-7");
+            System.out.print("Ingrese su opcion: ");
+            arma = sc.nextInt();
+            if (arma < 1 || arma > 3) {
+                System.out.println("Opcion incorrecta!");
+            } else {
+                if (arma == 3 && edad < 25) {
+                    System.out.println("Demasiado joven para una RPG-7!");
+                    arma = 4;
+                }
+            }
+        } while (arma < 1 || arma > 3);
+        String Arma = "";
+        int fuego = 0;
+        switch (arma) {
+            case 1:
+                fuego = 27;
+                Arma = "AK-47";
+                break;
+            case 2:
+                fuego = 13;
+                Arma = "Revolver_Navant";
+                break;
+            case 3:
+                fuego = 57;
+                Arma = "RPG-7";
+                break;
+        }
+        if (edad > 17) {
+            Rusia.set(soldado, new Rusos(nombre, id, edad, rango, 8 * edad, Arma, fuego));
+        } else {
+            System.out.println("El soldado no esta calificado por ser menor de edad!");
+        }
+    }
+
+    public static void Alemania_Metodo2(int soldado) {
+        System.out.println();
+        System.out.println("-> Modificacion de Soldado Aleman");
+        System.out.print("Ingrese el alias del soldado: ");
+        String alias = sc.next();
+        System.out.print("Ingrese la edad del soldado: ");
+        int edad = sc.nextInt();
+        System.out.print("Ingrese la casta del soldado: ");
+        String casta = sc.next();
+        int arma;
+        do {
+            System.out.println("Escoga una arma para el soldado:");
+            System.out.println("1. Subfusil MP 40");
+            System.out.println("2. Ametralladora MG42");
+            System.out.println("3. Pistola Walther P38");
+            System.out.print("Ingrese su opcion: ");
+            arma = sc.nextInt();
+            if (arma < 1 || arma > 3) {
+                System.out.println("Opcion incorrecta!");
+            }
+        } while (arma < 1 || arma > 3);
+        String Arma = "";
+        int fuego = 0;
+        switch (arma) {
+            case 1:
+                fuego = 25;
+                Arma = "Subfusil_MP40";
+                break;
+            case 2:
+                fuego = 32;
+                Arma = "Ametralladora_MG42";
+                break;
+            case 3:
+                fuego = 11;
+                Arma = "Pistola_Walther_P38";
+                break;
+        }
+        Alemania.set(soldado, new Alemanes(alias, edad, casta, 8 * edad, Arma, fuego));
+    }
+
+    public static void Programacion_Metodo2(int soldado) {
+        System.out.println();
+        System.out.println("-> Modificacion de Alumno");
+        System.out.print("Ingrese el apodo del soldado: ");
+        String apodo = sc.next();
+        System.out.print("Ingrese el numero de cuenta del soldado: ");
+        int cuenta = sc.nextInt();
+        System.out.print("Ingrese la edad del soldado: ");
+        int edad = sc.nextInt();
+        System.out.print("Ingrese el grado academico del soldado: ");
+        String grado = sc.next();
+        int arma;
+        do {
+            System.out.println("Escoga una arma para el soldado:");
+            System.out.println("1. Disco Duro");
+            System.out.println("2. Control de Wii");
+            System.out.println("3. Laptop");
+            System.out.print("Ingrese su opcion: ");
+            arma = sc.nextInt();
+            if (arma < 1 || arma > 3) {
+                System.out.println("Opcion incorrecta!");
+            }
+        } while (arma < 1 || arma > 3);
+        String Arma = "";
+        int fuego = 0;
+        switch (arma) {
+            case 1:
+                fuego = 23;
+                Arma = "Disco_Duro";
+                break;
+            case 2:
+                fuego = 47;
+                Arma = "Control_Wii";
+                break;
+            case 3:
+                fuego = 76;
+                Arma = "Laptop";
+                break;
+        }
+        if (edad < 16) {
+            Programacion.set(soldado, new Alumnos(apodo, cuenta, edad, 8 * edad, grado, Arma, fuego));
+        } else {
+            System.out.println("El soldado no esta calificado por ser menor de 16 años!");
+        }
     }
 }
