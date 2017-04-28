@@ -232,6 +232,7 @@ public class Lab2_Erick_Martinez {
                         }
                         if (Rusia.isEmpty() && Alemania.isEmpty() && Programacion.isEmpty()) {
                             System.out.println("Empate!");
+                            ganador = 1;
                         } else {
                             if ((Rusia.isEmpty() && Alemania.isEmpty()) || turno == 1) {
                                 System.out.println("Ganador Alumnos!");
